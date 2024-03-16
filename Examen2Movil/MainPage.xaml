@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+             xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
+             x:Class="Examen2Movil.MainPage"
+             Title="Examen II Parcial">
+
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Nueva Ubicación" Clicked="ToolbarItem_Clicked_Nueva"></ToolbarItem>
+        <ToolbarItem Text="Ubicaciones Salvadas" Clicked="ToolbarItem_Clicked_salvadas"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame Padding="20" CornerRadius="0">
+                <Image Source="@Images/logo.png" HeightRequest="50"/>
+            </Frame>
+
+
+            <Image x:Name="foto" BackgroundColor="AliceBlue" HeightRequest="308" WidthRequest="300"
+               HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Button Text="Tomar foto" x:Name="btnFoto" BackgroundColor="Green" Clicked="btnFoto_Clicked"/>
+
+            <Label Text="Latitud actual:"  Margin="5" HorizontalOptions="StartAndExpand"/>
+
+            <Entry Keyboard="Numeric"  x:Name="txtLatitud"  Placeholder="Ingrese Latitud" IsEnabled="False"/>
+
+            <Label Text="Longitud actual:" HorizontalOptions="StartAndExpand"/>
+
+            <Entry Keyboard="Numeric"  x:Name="txtLongitud" Placeholder="Ingrese Longitud" IsEnabled="False"/>
+
+            <Label Text="Descripcion:"  HorizontalOptions="StartAndExpand"/>
+
+            <Editor Placeholder="Describa la ubicación" x:Name="txtDescripcion" HeightRequest="50" HorizontalOptions="FillAndExpand"
+                    />
+
+            <Button x:Name="btnGrabarAudio"
+                    Text="Grabar Audio" BackgroundColor="Green" Margin="5" Clicked="btnGrabarAudio_Clicked"
+                     />
+            <Button x:Name="btnSalvarUbicacion" Text="Salvar Ubicacion" BackgroundColor="ForestGreen" Margin="5" Clicked="btnSalvarUbicacion_Clicked"
+                    />
+
+            <Button x:Name="btnListaUbicacion" Text="Ubicaciones salvadas" BackgroundColor="ForestGreen" Margin="5" Clicked="btnListaUbicacion_Clicked"
+          />
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
